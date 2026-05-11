@@ -1,0 +1,18 @@
+name: zaid_cv_flutter
+description: تطبيق CV وخدمات زيد الريمي محول من HTML إلى Flutter Native.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.3.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/original_index.html
+    - assets/profile.jpg

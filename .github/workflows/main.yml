@@ -1,0 +1,26 @@
+#!/bin/bash
+# فك الضغط
+unzip zaid.zip -d zaid_unzipped
+cd zaid_unzipped || exit 1
+
+# إنشاء المجلدات الرئيسية
+mkdir -p src docs assets configs
+
+# نقل الأكواد البرمجية
+mv *.py *.js *.java *.c *.cpp *.ts *.go *.rb src/ 2>/dev/null
+
+# نقل ملفات التوثيق
+mv *.md *.txt *.rst *.docx README* LICENSE* docs/ 2>/dev/null
+
+# نقل الصور
+mv *.png *.jpg *.jpeg *.gif *.svg assets/ 2>/dev/null
+
+# نقل ملفات الإعدادات
+mv *.yml *.yaml *.json *.ini *.env configs/ 2>/dev/null
+
+# نقل سكربتات الشل
+mv *.sh *.bat *.ps1 src/ 2>/dev/null
+
+# طباعة ملخص التنفيذ
+echo "تم فك الضغط وإعادة ترتيب الملفات:"
+tree . || ls -R
